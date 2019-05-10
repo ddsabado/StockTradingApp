@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FundAccount">
+
+    <TextView
+        android:id="@+id/textViewAccountFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:background="#6075D6"
+        android:fontFamily="sans-serif-black"
+        android:text="Account From:"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textViewAccountTo"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="35dp"
+        android:background="#6075D6"
+        android:fontFamily="sans-serif-black"
+        android:text="Account To:"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/editTextAccountFrom"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="39dp"
+        android:layout_toEndOf="@+id/textViewAccountFrom"
+        android:ems="10"
+        android:inputType="text"
+        android:scrollbars="vertical" />
+
+    <EditText
+        android:id="@+id/editTextAccountTo"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPayee"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textViewAccountTo"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/buttonTransfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNotes"
+        android:layout_marginStart="-140dp"
+        android:layout_marginTop="31dp"
+        android:layout_toEndOf="@+id/editTextAccountFrom"
+        android:background="#DD3F51B5"
+        android:text="Transfer"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textViewAmount"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAccountTo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="35dp"
+        android:background="#6075D6"
+        android:fontFamily="sans-serif-black"
+        android:text="Amount:"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textViewCurrency"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAmount"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="35dp"
+        android:background="#6075D6"
+        android:fontFamily="sans-serif-black"
+        android:text="Currency:"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textViewNotes"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewCurrency"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="35dp"
+        android:background="#6075D6"
+        android:fontFamily="sans-serif-black"
+        android:text="Notes:"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/editTextAmount"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextAccountTo"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textViewAmount"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextCurrency"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextAmount"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textViewCurrency"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextNotes"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextCurrency"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textViewNotes"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewAccountFrom"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="35dp"
+        android:background="#6075D6"
+        android:fontFamily="sans-serif-black"
+        android:text="Payee:"
+        android:textAlignment="textEnd"
+        android:textColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/editTextPayee"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextAccountFrom"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textView11"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tvTransactionId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonTransfer"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="61dp"
+        android:background="#FFFFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvTransactionDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTransactionId"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvTransactionTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTransactionDate"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvTransDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="467dp"
+        android:fontFamily="sans-serif-black"
+        android:text="TRANSACTION DETAILS"
+        android:textAlignment="center" />
+</RelativeLayout>

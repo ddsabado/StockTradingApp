@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Stock Trading App</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="Accounts">Account</string>
+    <string name="WatchList">Watch List</string>
+    <string name="Quote">Quote</string>
+    <string name="StockMarket">Stock Market</string>
+</resources>
+

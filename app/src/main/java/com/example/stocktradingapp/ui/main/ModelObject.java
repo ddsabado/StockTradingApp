@@ -6,6 +6,7 @@ public enum ModelObject {
     ACCOUNTS(R.string.Accounts ,R.layout.view_account),
     QUOTE(R.string.Quote, R.layout.view_quote),
     WATCHLIST(R.string.WatchList, R.layout.view_watchlist),
+    TRADE(R.string.Trade, R.layout.view_trade),
     STOCKMARKET(R.string.StockMarket, R.layout.view_stockmarket);
 
     private int mTitleResId;

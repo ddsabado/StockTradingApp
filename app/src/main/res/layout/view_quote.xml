@@ -8,29 +8,27 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="104dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="198dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/buttonQuote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_width="67dp"
+        android:layout_height="34dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="61dp"
+        android:layout_toEndOf="@+id/editTextQuote"
         android:background="#DD3F51B5"
         android:text="@string/Quote"
         android:textColor="#FFFFFF" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_quote"
-        android:layout_width="260dp"
-        android:layout_height="262dp"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/editTextQuote"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
@@ -48,4 +46,97 @@
         android:fontFamily="sans-serif-black"
         android:text="Stock:"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvAsk"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recycler_view_quote"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvBid"
+        android:background="#DD3F51B5"
+        android:text="ASK"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvBid"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recycler_view_quote"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="0dp"
+        android:background="#DD3F51B5"
+        android:text="BID"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvBidSize"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBid"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="0dp"
+        android:background="#DD5B6DE6"
+        android:text="Size"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvBidPrice"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAsk"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvBidSize"
+        android:background="#DD5B6DE6"
+        android:text="Price"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvAskPrice"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAsk"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvBidPrice"
+        android:background="#DD5B6DE6"
+        android:text="Price"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/tvAskSize"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAsk"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvAskPrice"
+        android:background="#DD5B6DE6"
+        android:text="Size"
+        android:textAlignment="center" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="255dp"
+        android:layout_height="248dp"
+        android:layout_below="@+id/tvBidPrice"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="0dp" />
+
+    <Button
+        android:id="@+id/buttonBuy"
+        android:layout_width="67dp"
+        android:layout_height="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="61dp"
+        android:layout_toEndOf="@+id/buttonQuote"
+        android:background="#DD3F51B5"
+        android:text="Buy"
+        android:textColor="#FFFFFF" />
+
 </RelativeLayout>

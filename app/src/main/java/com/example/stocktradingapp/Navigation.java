@@ -19,6 +19,7 @@ import com.example.stocktradingapp.adapter.QuoteAdapter;
 import com.example.stocktradingapp.adapter.WatchListAdapter;
 import com.example.stocktradingapp.data.AccountBalance;
 import com.example.stocktradingapp.data.Stock;
+import com.example.stocktradingapp.tasks.BuyTask;
 import com.example.stocktradingapp.tasks.QuoteTask;
 import com.example.stocktradingapp.tasks.WatchListTask;
 import com.example.stocktradingapp.token.DownloadAccessTokenTask;
@@ -26,6 +27,8 @@ import com.example.stocktradingapp.token.Storage;
 import com.example.stocktradingapp.ui.main.CustomPagerAdapter;
 import com.robinhood.ticker.TickerUtils;
 import com.robinhood.ticker.TickerView;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,12 +55,23 @@ public class Navigation extends AppCompatActivity {
     private Button buttonWithdrawFunds;
     private Button buttonFundAccount;
     private Button buttonAddToWatchList;
+    private Button buttonBuy;
     //EDIT TEXT
     private EditText editTextQuote;
     private EditText editTextStockCode;
     //TEXTVIEW
     private TextView tvAccountBalance;
     private TextView tvBuyingPower;
+    private TextView tvBid;
+    private TextView tvAsk;
+    private TextView tvAskSize;
+    private TextView tvAskPrice;
+    private TextView tvBidSize;
+    private TextView tvBidPrice;
+    private TextView tvAmount;
+
+
+
 
     private ArrayList<Stock> watchList;
 
@@ -134,13 +148,32 @@ public class Navigation extends AppCompatActivity {
                 }
                 else if(tab.getPosition() == 1){    // QUOTE
                     buttonQuote = (Button) findViewById(R.id.buttonQuote);
+                    buttonBuy = (Button) findViewById(R.id.buttonBuy);
                     editTextQuote = (EditText) findViewById(R.id.editTextQuote);
                     recyclerViewQuote = (RecyclerView) findViewById(R.id.recycler_view_quote);
+
+                    //tv declarations
+                    tvBid = (TextView)findViewById(R.id.tvBid);
+                    tvAsk = (TextView)findViewById(R.id.tvAsk);
+                    tvAskSize = (TextView)findViewById(R.id.tvAskSize);
+                    tvAskPrice = (TextView)findViewById(R.id.tvAskPrice);
+                    tvBidSize = (TextView)findViewById(R.id.tvBidSize);
+                    tvBidPrice = (TextView)findViewById(R.id.tvBidPrice);
+
                     buttonQuote.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Log.d("TAG", "Button Clicked");
+                            Log.d("TAG", "Quote Clicked");
                             new QuoteTask(getApplicationContext(), recyclerViewQuote, editTextQuote, quoteAdapter).execute();
+                        }
+                    });
+
+                    buttonBuy.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Log.d("TAG", "Buy Clicked");
+                            new QuoteTask(getApplicationContext(), recyclerViewQuote, editTextQuote, quoteAdapter).execute();
+                            new BuyTask(getApplicationContext(), editTextQuote).execute();
                         }
                     });
                 }
@@ -156,7 +189,12 @@ public class Navigation extends AppCompatActivity {
                     });
 
                 }
-                else if(tab.getPosition() == 3){       //STOCK MARKET
+                else if(tab.getPosition() == 3){       //TRADE
+
+
+
+                }
+                else if(tab.getPosition() == 4){       //STOCK MARKET
                     final TickerView tickerView = findViewById(R.id.tickerView);
                     tickerView.setAnimationInterpolator(new OvershootInterpolator());
                     tickerView.setCharacterLists(TickerUtils.provideNumberList());

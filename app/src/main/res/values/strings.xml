@@ -6,6 +6,7 @@
     <string name="Accounts">Account</string>
     <string name="WatchList">Watch List</string>
     <string name="Quote">Quote</string>
+    <string name="Trade">Trade</string>
     <string name="StockMarket">Stock Market</string>
 </resources>
 

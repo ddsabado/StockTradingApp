@@ -54,15 +54,6 @@ public class QuoteTask extends AsyncTask<Void, Void, Void> {
                 .build();
 
         WebService webService = retrofit.create(WebService.class);
-        /*
-        *NULL HANDLER
-        Call<StockQuote> call;
-        if (null != editText.getText()) {
-            call = webService.getStockQuote(editText.getText().toString());
-        } else {
-            call = webService.getStockQuote(" ");
-        }
-        */
         Call<StockQuote> call = webService.getStockQuote(editText.getText().toString());
         call.enqueue(new Callback<StockQuote>() {
             @Override

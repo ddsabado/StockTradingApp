@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="250dp"
+        android:background="#DD3F51B5"
+        android:fontFamily="sans-serif-black"
+        android:text="Order Details"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="250dp"
+        android:background="#DD5B6DE6"
+        android:fontFamily="sans-serif-black"
+        android:text="Transaction"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="250dp"
+        android:background="#DD3F51B5"
+        android:fontFamily="sans-serif-black"
+        android:text="Board"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView13"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="250dp"
+        android:background="#DD5B6DE6"
+        android:fontFamily="sans-serif-black"
+        android:text="Stock Code"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="250dp"
+        android:background="#DD3F51B5"
+        android:fontFamily="sans-serif-black"
+        android:text="Number of Shares"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView15"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="250dp"
+        android:background="#DD5B6DE6"
+        android:fontFamily="sans-serif-black"
+        android:text="Price"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView16"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="250dp"
+        android:background="#DD3F51B5"
+        android:fontFamily="sans-serif-black"
+        android:text="Total"
+        android:textAlignment="textEnd" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="117dp"
+        android:layout_height="33dp"
+        android:layout_below="@+id/textView17"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="44dp"
+        android:background="#DD3F51B5"
+        android:text="Submit order"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
+</RelativeLayout>

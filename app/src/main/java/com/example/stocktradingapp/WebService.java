@@ -2,6 +2,7 @@ package com.example.stocktradingapp;
 
 import com.example.stocktradingapp.data.AccountBalance;
 import com.example.stocktradingapp.data.ExternalTransfer;
+import com.example.stocktradingapp.data.InternalTransfer;
 import com.example.stocktradingapp.data.StockQuote;
 
 import retrofit2.Call;
@@ -20,5 +21,8 @@ public interface WebService {
 
     @POST("external")
     Call<ExternalTransfer> getExternalTransfer(@Body ExternalTransfer externalTransfer);
+
+    @POST("internal")
+    Call<InternalTransfer> getInternalTransfer(@Body InternalTransfer internalTransfer);
 
 }

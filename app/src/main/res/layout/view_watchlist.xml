@@ -78,10 +78,10 @@
 
     <Button
         android:id="@+id/buttonAddToWatchList"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_width="179dp"
+        android:layout_height="35dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="11dp"
         android:layout_marginTop="33dp"
         android:layout_toEndOf="@+id/editTextStockCode"
         android:background="#DD3F51B5"

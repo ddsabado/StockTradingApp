@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,15 +18,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.stocktradingapp.adapter.QuoteAdapter;
+import com.example.stocktradingapp.adapter.TransactionAdapter;
 import com.example.stocktradingapp.adapter.WatchListAdapter;
 import com.example.stocktradingapp.data.AccountBalance;
+import com.example.stocktradingapp.data.Item;
 import com.example.stocktradingapp.data.Stock;
+import com.example.stocktradingapp.data.Transaction;
 import com.example.stocktradingapp.tasks.BuyTask;
 import com.example.stocktradingapp.tasks.QuoteTask;
 import com.example.stocktradingapp.tasks.WatchListTask;
 import com.example.stocktradingapp.token.DownloadAccessTokenTask;
 import com.example.stocktradingapp.token.Storage;
 import com.example.stocktradingapp.ui.main.CustomPagerAdapter;
+import com.github.mikephil.charting.charts.CandleStickChart;
+import com.github.mikephil.charting.data.CandleDataSet;
+import com.github.mikephil.charting.data.CandleEntry;
 import com.robinhood.ticker.TickerUtils;
 import com.robinhood.ticker.TickerView;
 
@@ -50,6 +58,7 @@ public class Navigation extends AppCompatActivity {
     //ADAPTER
     private QuoteAdapter quoteAdapter;
     private WatchListAdapter watchListAdapter;
+    private TransactionAdapter transactionsAdapter;
     //BTN
     private Button buttonQuote;
     private Button buttonWithdrawFunds;
@@ -146,7 +155,10 @@ public class Navigation extends AppCompatActivity {
                         }
                     });
                 }
-                else if(tab.getPosition() == 1){    // QUOTE
+                else if(tab.getPosition() == 1){       //TRANSACTIONS
+                    initAccountTransactions();
+                }
+                else if(tab.getPosition() == 2){    // QUOTE
                     buttonQuote = (Button) findViewById(R.id.buttonQuote);
                     buttonBuy = (Button) findViewById(R.id.buttonBuy);
                     editTextQuote = (EditText) findViewById(R.id.editTextQuote);
@@ -177,7 +189,7 @@ public class Navigation extends AppCompatActivity {
                         }
                     });
                 }
-                else if(tab.getPosition() == 2){
+                else if(tab.getPosition() == 3){    //WATCHLIST
                     editTextStockCode = findViewById(R.id.editTextStockCode);
                     buttonAddToWatchList = findViewById(R.id.buttonAddToWatchList);
                     recyclerViewWatchList = findViewById(R.id.recycler_view_watchlist);
@@ -189,12 +201,12 @@ public class Navigation extends AppCompatActivity {
                     });
 
                 }
-                else if(tab.getPosition() == 3){       //TRADE
+                else if(tab.getPosition() == 4){       //TRADE
 
 
 
                 }
-                else if(tab.getPosition() == 4){       //STOCK MARKET
+                else if(tab.getPosition() == 5){       //STOCK MARKET
                     final TickerView tickerView = findViewById(R.id.tickerView);
                     tickerView.setAnimationInterpolator(new OvershootInterpolator());
                     tickerView.setCharacterLists(TickerUtils.provideNumberList());
@@ -268,9 +280,65 @@ public class Navigation extends AppCompatActivity {
             @Override
             public void onFailure(Call<AccountBalance> call, Throwable t) {
                 Log.d("Account Balance Failure", t.getMessage());
+                Toast.makeText(getApplicationContext(),t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 
+
+    }
+
+    private void initAccountTransactions(){
+        final String accessToken = new Storage(getApplicationContext()).getAccessToken();
+        Log.d("Transaction Token",accessToken);
+
+        httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(new Interceptor() {
+            @Override
+            public okhttp3.Response intercept(Chain chain) throws IOException {
+                Request request = chain.request().newBuilder().addHeader("Authorization", accessToken).build();
+                return chain.proceed(request);
+            }
+        });
+        //Create Webservice
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Utils.baseAccountsUrl)
+                .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        WebService webService = retrofit.create(WebService.class);
+        Call<Transaction> call = webService.getAccountTransactions();
+        call.enqueue(new Callback<Transaction>() {
+            @Override
+            public void onResponse(Call<Transaction> call, Response<Transaction> response) {
+                Log.d("Account Trans Success", response.message()+response.body());
+                if(response.body() != null) {
+                    generateTransactionList(response.body().getItems());
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),response.code()+ ":" + response.message(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Transaction> call, Throwable t) {
+                Log.d("Account Balance Failure", t.getMessage());
+                Toast.makeText(getApplicationContext(),t.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+        });
+    }
+
+    private void generateTransactionList(List<Item> itemList){
+        RecyclerView recyclerView = findViewById(R.id.recyclerview_trans);
+
+        transactionsAdapter = new TransactionAdapter(itemList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(transactionsAdapter);
+        transactionsAdapter.notifyDataSetChanged();
 
     }
 }

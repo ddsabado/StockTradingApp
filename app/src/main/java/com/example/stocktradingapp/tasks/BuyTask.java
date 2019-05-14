@@ -73,10 +73,11 @@ public class BuyTask extends AsyncTask<Void, Void, Void> {
             public void onResponse(Call<StockQuote> call, Response<StockQuote> response) {
                 Log.d("Stock Quote Success", response.message() + response.body());
                 if(response.body() != null) {
+                    Toast.makeText(mContext,response.code() + " " + response.message(), Toast.LENGTH_LONG).show();
                     initbuy(response.body().getStock());
                 }
                 else{
-                    Toast.makeText(mContext,response.code() + " " + response.message(), Toast.LENGTH_LONG);
+                    Toast.makeText(mContext,response.code() + " " + response.message(), Toast.LENGTH_LONG).show();
                 }
             }
             @Override
@@ -107,7 +108,7 @@ public class BuyTask extends AsyncTask<Void, Void, Void> {
             @Override
             public void onResponse(Call<InternalTransfer> call, Response<InternalTransfer> response) {
                 Log.d("InternalTrans Success", response.message() + response.body());
-                Toast.makeText(mContext, response.code() + ":" + response.message(), Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, "Account Balance Updated", Toast.LENGTH_LONG).show();
             }
 
             @Override

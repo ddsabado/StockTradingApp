@@ -27,12 +27,13 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_quote"
-        android:layout_width="258dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextQuote"
         android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="51dp"
         android:background="@null" />
 
     <TextView
@@ -49,37 +50,40 @@
 
     <TextView
         android:id="@+id/tvAsk"
-        android:layout_width="129dp"
+        android:layout_width="166dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recycler_view_quote"
+        android:layout_alignTop="@+id/tvBid"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/tvBid"
         android:background="#DD3F51B5"
+        android:fontFamily="sans-serif-black"
         android:text="ASK"
         android:textAlignment="center" />
 
     <TextView
         android:id="@+id/tvBid"
-        android:layout_width="129dp"
+        android:layout_width="143dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recycler_view_quote"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
         android:background="#DD3F51B5"
+        android:fontFamily="sans-serif-black"
         android:text="BID"
         android:textAlignment="center" />
 
     <TextView
         android:id="@+id/tvBidSize"
-        android:layout_width="64dp"
+        android:layout_width="78dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvBid"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="0dp"
         android:background="#DD5B6DE6"
+        android:fontFamily="sans-serif-black"
         android:text="Size"
         android:textAlignment="center" />
 
@@ -87,11 +91,12 @@
         android:id="@+id/tvBidPrice"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvAsk"
+        android:layout_below="@+id/tvBid"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/tvBidSize"
         android:background="#DD5B6DE6"
+        android:fontFamily="sans-serif-black"
         android:text="Price"
         android:textAlignment="center" />
 
@@ -104,23 +109,25 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/tvBidPrice"
         android:background="#DD5B6DE6"
+        android:fontFamily="sans-serif-black"
         android:text="Price"
         android:textAlignment="center" />
 
     <TextView
         android:id="@+id/tvAskSize"
-        android:layout_width="64dp"
+        android:layout_width="102dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvAsk"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/tvAskPrice"
         android:background="#DD5B6DE6"
+        android:fontFamily="sans-serif-black"
         android:text="Size"
         android:textAlignment="center" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="255dp"
+        android:layout_width="258dp"
         android:layout_height="248dp"
         android:layout_below="@+id/tvBidPrice"
         android:layout_alignParentStart="true"

@@ -36,7 +36,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteAdapter.QuoteAdapter
         holder.tvName.setText(stockListResponse.get(position).getName());
         //holder.tvCurrency.setText(stockListResponse.get(position).getPrice().getCurrency());
         holder.tvAmount.setText(stockListResponse.get(position).getPrice().getAmount().toString() + " " + stockListResponse.get(position).getPrice().getCurrency());
-        holder.tvPercentChange.setText(stockListResponse.get(position).getPercentChange().toString());
+        holder.tvPercentChange.setText(stockListResponse.get(position).getPercentChange().toString() + "%");
         holder.tvAsOf.setText("As of: " + stockQuoteResponse.getAsOf());
     }
 

@@ -3,21 +3,78 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textView19"
+        android:layout_width="250dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_alignTop="@+id/textView16"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="0dp"
+        android:background="#3B6D6464" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="209dp"
+        android:layout_height="34dp"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_alignTop="@+id/textView15"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <RadioGroup
+        android:layout_width="249dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignTop="@+id/textView13"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#3B6D6464"
+            android:fontFamily="sans-serif-black"
+            android:text="MAIN"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#3B6D6464"
+            android:fontFamily="sans-serif-black"
+            android:text="ODDLOT"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <TextView
         android:id="@+id/textView2"
-        android:layout_width="128dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="94dp"
-        android:layout_marginEnd="250dp"
+        android:layout_marginEnd="0dp"
         android:background="#DD3F51B5"
         android:fontFamily="sans-serif-black"
         android:text="Order Details"
-        android:textAlignment="textEnd" />
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="128dp"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
         android:layout_alignParentEnd="true"
@@ -26,11 +83,12 @@
         android:background="#DD5B6DE6"
         android:fontFamily="sans-serif-black"
         android:text="Transaction"
-        android:textAlignment="textEnd" />
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="128dp"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
         android:layout_alignParentEnd="true"
@@ -39,12 +97,13 @@
         android:background="#DD3F51B5"
         android:fontFamily="sans-serif-black"
         android:text="Board"
-        android:textAlignment="textEnd" />
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
+        android:layout_width="161dp"
+        android:layout_height="34dp"
         android:layout_below="@+id/textView13"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="0dp"
@@ -52,26 +111,26 @@
         android:background="#DD5B6DE6"
         android:fontFamily="sans-serif-black"
         android:text="Stock Code"
-        android:textAlignment="textEnd" />
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
+        android:layout_width="162dp"
+        android:layout_height="34dp"
         android:layout_below="@+id/textView14"
-        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="33dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="250dp"
         android:background="#DD3F51B5"
         android:fontFamily="sans-serif-black"
         android:text="Number of Shares"
-        android:textAlignment="textEnd" />
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="128dp"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView15"
         android:layout_alignParentEnd="true"
@@ -80,11 +139,12 @@
         android:background="#DD5B6DE6"
         android:fontFamily="sans-serif-black"
         android:text="Price"
-        android:textAlignment="textEnd" />
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="128dp"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView16"
         android:layout_alignParentEnd="true"
@@ -93,7 +153,8 @@
         android:background="#DD3F51B5"
         android:fontFamily="sans-serif-black"
         android:text="Total"
-        android:textAlignment="textEnd" />
+        android:textAlignment="textEnd"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/button"
@@ -101,10 +162,66 @@
         android:layout_height="33dp"
         android:layout_below="@+id/textView17"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="132dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="148dp"
         android:layout_marginTop="44dp"
         android:background="#DD3F51B5"
         android:text="Submit order"
         android:textAlignment="center"
         android:textColor="#FFFFFF" />
+
+    <RadioGroup
+        android:layout_width="249dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#3B6D6464"
+            android:fontFamily="sans-serif-black"
+            android:text="BUY"
+            android:textAlignment="textStart"
+            android:textColor="#4CAF50"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#3B6D6464"
+            android:fontFamily="sans-serif-black"
+            android:text="SELL"
+            android:textColor="#E91E63"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="209dp"
+        android:layout_height="34dp"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_alignTop="@+id/textView14"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="250dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_alignTop="@+id/textView16"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="24dp"
+        android:background="#3B6D6464" />
 </RelativeLayout>

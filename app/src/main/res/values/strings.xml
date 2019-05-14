@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Stock Trading App</string>
+    <string name="app_name">Stock Trading Demo Application</string>
     <string name="title_activity_navigation">Navigation</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
@@ -8,5 +8,6 @@
     <string name="Quote">Quote</string>
     <string name="Trade">Trade</string>
     <string name="StockMarket">Stock Market</string>
+    <string name="Transactions">Transactions</string>
 </resources>
 

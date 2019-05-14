@@ -4,6 +4,7 @@ import com.example.stocktradingapp.data.AccountBalance;
 import com.example.stocktradingapp.data.ExternalTransfer;
 import com.example.stocktradingapp.data.InternalTransfer;
 import com.example.stocktradingapp.data.StockQuote;
+import com.example.stocktradingapp.data.Transaction;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -18,6 +19,9 @@ public interface WebService {
 
     @GET("accounts/0001000100001/balances")
     Call<AccountBalance> getAccountBalance();
+
+    @GET("accounts/0001000100001/transactions")
+    Call<Transaction> getAccountTransactions();
 
     @POST("external")
     Call<ExternalTransfer> getExternalTransfer(@Body ExternalTransfer externalTransfer);

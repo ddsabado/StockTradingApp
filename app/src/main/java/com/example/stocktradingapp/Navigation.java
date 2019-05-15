@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -78,7 +79,8 @@ public class Navigation extends AppCompatActivity {
     private TextView tvBidSize;
     private TextView tvBidPrice;
     private TextView tvAmount;
-
+    //IMAGE VIEW
+    private ImageView imgchart;
 
 
 
@@ -163,6 +165,8 @@ public class Navigation extends AppCompatActivity {
                     buttonBuy = (Button) findViewById(R.id.buttonBuy);
                     editTextQuote = (EditText) findViewById(R.id.editTextQuote);
                     recyclerViewQuote = (RecyclerView) findViewById(R.id.recycler_view_quote);
+                    imgchart = findViewById(R.id.imgchart);
+                    imgchart.setVisibility(View.INVISIBLE);
 
                     //tv declarations
                     tvBid = (TextView)findViewById(R.id.tvBid);
@@ -176,7 +180,7 @@ public class Navigation extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             Log.d("TAG", "Quote Clicked");
-                            new QuoteTask(getApplicationContext(), recyclerViewQuote, editTextQuote, quoteAdapter).execute();
+                            new QuoteTask(getApplicationContext(), recyclerViewQuote, editTextQuote, quoteAdapter, imgchart).execute();
                         }
                     });
 
@@ -184,7 +188,7 @@ public class Navigation extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             Log.d("TAG", "Buy Clicked");
-                            new QuoteTask(getApplicationContext(), recyclerViewQuote, editTextQuote, quoteAdapter).execute();
+                            new QuoteTask(getApplicationContext(), recyclerViewQuote, editTextQuote, quoteAdapter, imgchart).execute();
                             new BuyTask(getApplicationContext(), editTextQuote).execute();
                         }
                     });
@@ -233,6 +237,8 @@ public class Navigation extends AppCompatActivity {
 
 
     }
+
+
 
     private void initAccountData(){
         //Token Webservice

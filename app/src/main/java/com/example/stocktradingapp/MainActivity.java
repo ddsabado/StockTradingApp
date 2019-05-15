@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 userid = editTextID.getText().toString();
                 pass = editTextPassword.getText().toString();
 
+
                 if((userid.equals(keyid)) && (pass.equals(keypass))){
                     Toast.makeText(getApplicationContext(),"Login Success", Toast.LENGTH_SHORT).show();
                     Intent startIntent = new Intent(getApplicationContext(),Navigation.class);

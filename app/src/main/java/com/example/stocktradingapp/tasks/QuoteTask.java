@@ -6,7 +6,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.stocktradingapp.R;
@@ -29,13 +31,24 @@ public class QuoteTask extends AsyncTask<Void, Void, Void> {
     private RecyclerView rootView;
     private QuoteAdapter quoteAdapter;
     private EditText editText;
+    private ImageView imgchart;
+    private String stockCode;
+
+    public QuoteTask(Context mContext, RecyclerView rootView,String stockCode, QuoteAdapter quoteAdapter, ImageView imgchart) {
+        this.mContext = mContext;
+        this.rootView = rootView;
+        this.stockCode = stockCode;
+        this.quoteAdapter = quoteAdapter;
+        this.imgchart = imgchart;
+    }
 
 
-    public QuoteTask(Context mContext, RecyclerView rootView,EditText editText, QuoteAdapter quoteAdapter) {
+    public QuoteTask(Context mContext, RecyclerView rootView,EditText editText, QuoteAdapter quoteAdapter, ImageView imgchart) {
         this.mContext = mContext;
         this.rootView = rootView;
         this.editText = editText;
         this.quoteAdapter = quoteAdapter;
+        this.imgchart = imgchart;
     }
 
 
@@ -60,6 +73,7 @@ public class QuoteTask extends AsyncTask<Void, Void, Void> {
             public void onResponse(Call<StockQuote> call, Response<StockQuote> response) {
                 Log.d("Stock Quote Success", response.message() + response.body());
                 if(response.body() != null) {
+                    imgchart.setVisibility(View.VISIBLE);
                     Toast.makeText(mContext,response.code() + " " + response.message(), Toast.LENGTH_LONG).show();
                     generateStockQuoteData(response.body(), response.body().getStock());
                 }
